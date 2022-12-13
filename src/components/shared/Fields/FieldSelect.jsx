@@ -3,7 +3,6 @@ import { faChevronDown } from '@fortawesome/pro-solid-svg-icons';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { LOCALE } from '@constants';
 import { noop } from '@utils';
 
 import { Field, IconBox } from '@components';
@@ -25,7 +24,7 @@ const defaultProps = {
   requiredLabel: false,
   wide: true,
   disabled: false,
-  defaultValue: LOCALE.EN,
+  defaultValue: null,
   className: '',
   label: '',
   error: '',
