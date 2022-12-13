@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { getButtonClassNames, noop } from '@utils';
 
-import { IconBox, Render, SpinnerChase } from '@components';
+import { IconBox } from '@components';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -50,8 +50,6 @@ export const Button = ({
   ...props
 }) => {
   const isDisabled = loading || disabled;
-  const isLoading = !theme && loading;
-
   const classNames = theme
     ? className
     : getButtonClassNames({
@@ -65,9 +63,6 @@ export const Button = ({
   return (
     /* eslint-disable react/button-has-type */
     <button {...props} type={type} disabled={isDisabled} className={classNames}>
-      <Render if={isLoading}>
-        <SpinnerChase className="button__spinner" color="white" />
-      </Render>
       <IconBox className={iconClassName} icon={icon} size="16" />
       {children}
     </button>
