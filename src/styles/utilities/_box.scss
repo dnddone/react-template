@@ -1,0 +1,7 @@
+.box {
+  @each $box in $boxes {
+    &-#{$box} {
+      @include box($box);
+    }
+  }
+}

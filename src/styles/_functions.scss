@@ -1,0 +1,27 @@
+@function from($value) {
+  @return $value + 1;
+}
+
+@function to($value) {
+  @return $value;
+}
+
+@function space($value) {
+  @return $value * $space * 1px;
+}
+
+@function color($colorName) {
+  @return map-get($colors, $colorName);
+}
+
+@function border($color) {
+  @return 1px solid $color;
+}
+
+@function color-rule($hex, $className) {
+  @if $className == '.border' {
+    @return border($hex);
+  } @else {
+    @return $hex;
+  }
+}

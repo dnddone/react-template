@@ -1,0 +1,66 @@
+%button-base {
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.button {
+  @extend %button-base;
+  @include transition();
+  cursor: pointer;
+
+  &__spinner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    @include transition();
+  }
+
+  &.loading,
+  &.loading * {
+    color: transparent !important;
+  }
+
+  //
+  // Sizes
+  //
+
+  &-default {
+    height: 36px;
+    @include font-size(14);
+  }
+
+  //
+  // Colors
+  //
+
+  // Primary
+
+  &-primary {
+    color: color(white);
+    @include bg-color-with-hover(primary-1, primary-5);
+    @include border();
+  }
+
+  &-primary.disabled {
+    background-color: color(primary-3);
+  }
+
+  // Secondary
+
+  &-secondary {
+    color: color(white);
+    @include bg-color-with-hover(other-8, other-10);
+    @include border();
+  }
+
+  &-secondary.disabled {
+    background-color: color(secondary-1);
+  }
+
+  .icon-box {
+    @include transition(color);
+  }
+}

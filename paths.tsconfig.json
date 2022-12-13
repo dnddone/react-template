@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@actions": ["redux/actions"],
+      "@actions/*": ["redux/actions/*"],
+
+      "@assets": ["assets"],
+      "@assets/*": ["assets/*"],
+
+      "@components": ["components"],
+      "@components/*": ["components/*"],
+
+      "@constants": ["constants"],
+      "@constants/*": ["constants/*"],
+
+      "@content": ["content"],
+      "@content/*": ["content/*"],
+
+      "@hooks": ["hooks"],
+      "@hooks/*": ["hooks/*"],
+
+      "@images": ["images"],
+      "@images/*": ["images/*"],
+
+      "@redux": ["redux"],
+      "@redux/*": ["redux/*"],
+
+      "@selectors": ["redux/selectors"],
+      "@selectors/*": ["redux/actions/*"],
+
+      "@services": ["services"],
+      "@services/*": ["services/*"],
+
+      "@translations/*": ["translations/*"],
+
+      "@types": ["types"],
+      "@types/*": ["types/*"],
+      
+      "@utils": ["utils"],
+      "@utils/*": ["utils/*"]
+    }
+  }
+}

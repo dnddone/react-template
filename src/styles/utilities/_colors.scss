@@ -1,0 +1,12 @@
+@include color(color);
+@include color-hover(color);
+
+.bg {
+  @include color(background-color);
+  @include color-hover(background-color);
+}
+
+.border {
+  @include color(border);
+  @include color-hover(border);
+}

@@ -1,0 +1,250 @@
+%field {
+  &-base {
+    padding: 8px 12px;
+    height: 36px;
+    border-radius: 6px;
+    border: border(color(grey-6));
+    background-color: color(white);
+    transition: border-color 300ms ease;
+  }
+
+  &-hover {
+    border-color: color(other-1);
+  }
+
+  &-focus {
+    border-color: color(text-1);
+  }
+
+  &-error {
+    border-color: color(other-3);
+    color: color(other-3);
+  }
+
+  &-disabled {
+    border-color: color(grey-6);
+    color: color(grey-6);
+    pointer-events: none;
+  }
+}
+
+.field-container {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.field-label {
+  margin-bottom: 4px;
+  @include font-size(12, 16);
+  color: color(text-2);
+}
+
+.field-error {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  margin-top: 4px;
+  width: 100%;
+  @include font-size(12);
+  color: color(other-3);
+
+  &.static {
+    position: static;
+  }
+}
+
+.field-input {
+  @extend %field-base;
+  @include font-size(14);
+  color: color(text-1);
+  outline: none;
+
+  &::placeholder {
+    color: color(grey-4);
+  }
+
+  &:hover {
+    @extend %field-hover;
+  }
+
+  &:focus {
+    @extend %field-focus;
+  }
+
+  &.error {
+    @extend %field-error;
+  }
+
+  &.disabled {
+    @extend %field-disabled;
+  }
+}
+
+.field-textarea {
+  @extend %field-base;
+  height: auto;
+  min-height: 64px;
+  @include font-size(14);
+  color: color(text-1);
+  outline: none;
+
+  &::placeholder {
+    color: color(grey-4);
+  }
+
+  &:hover {
+    @extend %field-hover;
+  }
+
+  &:focus {
+    @extend %field-focus;
+  }
+
+  &.error {
+    @extend %field-error;
+  }
+
+  &.disabled {
+    @extend %field-disabled;
+  }
+
+  &.resizable {
+    resize: vertical;
+  }
+}
+
+.field-before,
+.field-after {
+  position: absolute;
+  bottom: 11px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.field-before {
+  left: 12px;
+}
+
+.field-after {
+  right: 12px;
+}
+
+.field-checkbox {
+  &-check-container {
+    @include font-size(12);
+    color: transparent;
+    border: 2px solid color(grey-4);
+    border-radius: 4px;
+    background-color: transparent;
+    @include transition;
+  }
+
+  + label {
+    display: inline-flex;
+    cursor: pointer;
+  }
+
+  + label:hover > * {
+    border-color: color(grey-5);
+  }
+
+  &:checked + label &-check-container {
+    color: color(white);
+    border-color: color(primary-1);
+    background-color: color(primary-1);
+  }
+
+  &:checked + label:hover &-check-container {
+    border-color: color(primary-4);
+    background-color: color(primary-4);
+  }
+}
+
+.field-select {
+  // A reset of styles, including removing the default dropdown arrow
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 8px 40px 8px 12px;
+  width: 100%;
+  font-family: inherit;
+  @include font-size(14);
+  cursor: inherit;
+  outline: none;
+
+  // Remove dropdown arrow in IE10 & IE11
+  // @link https://www.filamentgroup.com/lab/select-css.html
+  &::-ms-expand {
+    display: none;
+  }
+
+  &.disabled {
+    @extend %field-disabled;
+  }
+
+  &-container {
+    display: grid;
+    grid-template-areas: 'select';
+
+    margin-bottom: 24px;
+    width: 100%;
+    height: 36;
+
+    @include border(color(grey-6));
+    border-radius: 6px;
+    background-color: color(white);
+
+    @include transition(border-color);
+    cursor: pointer;
+
+    &.disabled {
+      pointer-events: none;
+    }
+  }
+
+  &-chevron {
+    position: absolute;
+    pointer-events: none;
+    right: 12px;
+  }
+
+  &.disabled + &-chevron {
+    color: color(primary-3);
+  }
+}
+
+.field-switch {
+  &-slider {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 24px;
+    border-radius: 16px;
+    background-color: color(grey-4);
+    cursor: pointer;
+    text-indent: -9999px;
+  }
+
+  &-slider::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: color(white);
+    border-radius: 50%;
+    @include transition();
+  }
+
+  &:checked + &-slider {
+    background-color: color(primary-1);
+  }
+
+  &:checked + &-slider:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+  }
+}

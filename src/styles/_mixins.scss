@@ -1,0 +1,75 @@
+@import './functions';
+
+@mixin margin-auto {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin from($from) {
+  @media (min-width: from($from)) {
+    @content;
+  }
+}
+
+@mixin to($to) {
+  @media (max-width: to($to)) {
+    @content;
+  }
+}
+
+@mixin between($from, $to) {
+  @media (min-width: from($from)) and (max-width: to($to)) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @include from($tablet) {
+    @content;
+  }
+}
+
+@mixin md-lg {
+  @include from($mobile) {
+    @content;
+  }
+}
+
+@mixin lg-md {
+  @include md-lg {
+    @content;
+  }
+}
+
+@mixin md {
+  @include between($mobile, $tablet) {
+    @content;
+  }
+}
+
+@mixin sm-md {
+  @include to($tablet) {
+    @content;
+  }
+}
+
+@mixin md-sm {
+  @include sm-md {
+    @content;
+  }
+}
+
+@mixin sm {
+  @include to($mobile) {
+    @content;
+  }
+}
+
+@mixin transition($property: all, $duration: 300ms, $function: ease) {
+  transition: $property $duration $function;
+}
+
+@import './mixins/font-size';
+@import './mixins/box';

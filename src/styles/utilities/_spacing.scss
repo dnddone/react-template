@@ -1,0 +1,24 @@
+@each $selectorName, $base in $spacing-selectors {
+  @each $propertyName, $direction in $spacing-properties {
+    .#{$selectorName}#{$propertyName} {
+      $rule: #{$base}-#{$direction};
+      @include space(#{$rule});
+    }
+  }
+}
+
+@each $selectorName, $propertyName in $spacing-selectors {
+  .#{$selectorName} {
+    @include space(#{$propertyName});
+  }
+}
+
+@each $selectorName, $propertyName in $spacing-selectors {
+  @each $direction in $spacing-directions {
+    @each $spacer in $spacers {
+      .#{$selectorName}#{$direction}-#{$spacer} {
+        @include space-direction($direction, $propertyName, $spacer);
+      }
+    }
+  }
+}

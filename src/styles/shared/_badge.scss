@@ -1,0 +1,36 @@
+.badge {
+  display: inline-flex;
+  height: 36px;
+  @include font-size(12);
+  border-radius: 6px;
+
+  &.large {
+    height: 48px;
+    @include font-size(16);
+  }
+
+  &-yellow {
+    color: color(other-5);
+    background-color: color(other-7);
+  }
+
+  &-green {
+    color: color(other-8);
+    background-color: color(secondary-3);
+  }
+
+  &-grey {
+    color: color(text-2);
+    background-color: color(grey-7);
+  }
+
+  &-red {
+    color: color(other-3);
+    background-color: color(other-6);
+  }
+
+  &-blue {
+    color: color(other-9);
+    background-color: color(secondary-7);
+  }
+}

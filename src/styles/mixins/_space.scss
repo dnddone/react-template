@@ -1,0 +1,17 @@
+@mixin space($property) {
+  @each $spacer in $spacers {
+    &-#{$spacer} {
+      #{$property}: space($spacer);
+    }
+  }
+}
+
+@mixin space-direction($direction, $property, $multiplier) {
+  @if $direction == 'x' {
+    #{$property}-right: space($multiplier);
+    #{$property}-left: space($multiplier);
+  } @else {
+    #{$property}-top: space($multiplier);
+    #{$property}-bottom: space($multiplier);
+  }
+}

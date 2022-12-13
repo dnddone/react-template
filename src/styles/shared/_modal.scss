@@ -1,0 +1,70 @@
+.modal {
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+
+    max-width: 640px;
+    width: 100%;
+
+    border-radius: 12px;
+    background-color: color(white);
+
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    @include font-size(22);
+    @include transition(color);
+
+    &:hover {
+      color: color(grey-5);
+    }
+
+    &:active {
+      color: color(grey-3);
+    }
+  }
+
+  header,
+  .header {
+    padding-bottom: 16px;
+    border-bottom: border(color(grey-7));
+  }
+
+  footer,
+  .footer {
+    padding-top: 16px;
+    border-top: border(color(grey-7));
+  }
+
+  .title {
+    @include font-size(18, 27);
+    color: color(grey-1);
+  }
+
+  .content {
+    padding: 24px 0;
+    @include font-size(14, 21);
+    color: color(text-1);
+  }
+}
+
+/**
+ * This is cliackable overlay to close a modal
+ */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: color(black);
+  opacity: 0.5;
+  z-index: 9;
+}

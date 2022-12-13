@@ -1,0 +1,13 @@
+/**
+ * Usage: @include font-size(12, 18);
+ */
+
+@mixin font-size($font-size, $line-height: normal) {
+  font-size: $font-size * 1px;
+
+  @if $line-height == normal {
+    line-height: normal;
+  } @else {
+    line-height: $line-height * 1px;
+  }
+}

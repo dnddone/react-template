@@ -1,0 +1,46 @@
+$font: 'Inter';
+
+$space: 8;
+
+/**
+ * Lists
+ */
+$spacers: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+$boxes: 16, 24, 32, 40, 48, 64;
+
+/**
+ * Spacing mappers
+ */
+$spacing-selectors: (
+  'p': 'padding',
+  'm': 'margin',
+);
+$spacing-properties: (
+  't': 'top',
+  'r': 'right',
+  'b': 'bottom',
+  'l': 'left',
+);
+$spacing-directions: 'x', 'y';
+
+/**
+ * UI variables
+ */
+
+$transition-duration: 300ms;
+
+//
+// Colors
+//
+
+$color-black: #000000;
+$color-white: #ffffff;
+
+//
+// Color system
+//
+
+$colors: (
+  black: $color-black,
+  white: $color-white,
+);

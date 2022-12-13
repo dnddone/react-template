@@ -1,0 +1,17 @@
+.self {
+  &-auto {
+    align-self: auto;
+  }
+
+  &-start {
+    align-self: flex-start;
+  }
+
+  &-center {
+    align-self: center;
+  }
+
+  &-end {
+    align-self: flex-end;
+  }
+}

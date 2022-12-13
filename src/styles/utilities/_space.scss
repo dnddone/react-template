@@ -1,0 +1,18 @@
+%space-content {
+  content: '\00a0';
+}
+
+.space-before::before {
+  @extend %space-content;
+}
+
+.space-after::after {
+  @extend %space-content;
+}
+
+.space-both {
+  &::before,
+  &::after {
+    @extend %space-content;
+  }
+}

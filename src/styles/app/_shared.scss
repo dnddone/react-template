@@ -1,0 +1,53 @@
+.with-loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: color(white);
+  z-index: 1;
+}
+
+/**
+ * todo: add this class name to spacing
+ */
+.mt-auto {
+  margin-top: auto;
+}
+
+/**
+ * todo: add this class name to spacing
+ */
+.ml-auto {
+  margin-left: auto;
+}
+
+/**
+ * todo: add this class name to spacing
+ */
+.mb-auto {
+  margin-bottom: auto;
+}
+
+/**
+ * todo: add this class name to spacing
+ */
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.label-required::after {
+  content: '*';
+  display: inline-block;
+  margin-left: 2px;
+  vertical-align: middle;
+  font-size: smaller;
+  line-height: 1px;
+  color: color(other-3);
+  height: 4px;
+}
+
+.italic {
+  font-style: italic;
+}

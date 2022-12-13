@@ -1,0 +1,16 @@
+.text {
+  $offset: 8;
+  $multipliers: 0, 1, 2;
+  $length: length($spacers);
+
+  @each $multiplier in $multipliers {
+    @each $spacer in $spacers {
+      $addition: $multiplier * $length;
+      $size: $addition + $spacer + $offset;
+
+      &-#{$size} {
+        @include font-size($size);
+      }
+    }
+  }
+}

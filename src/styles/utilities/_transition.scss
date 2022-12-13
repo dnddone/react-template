@@ -1,0 +1,15 @@
+.transition {
+  @include transition();
+}
+
+.transition-color {
+  @include transition(color);
+}
+
+.transition-bg {
+  @include transition(background-color);
+}
+
+.transition-border {
+  @include transition(border-color);
+}

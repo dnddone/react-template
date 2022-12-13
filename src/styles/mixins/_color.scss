@@ -1,0 +1,46 @@
+@mixin color($property) {
+  $className: &;
+
+  @each $colorName, $hex in $colors {
+    #{if(&, '&-#{$colorName}', '.#{$colorName}')} {
+      #{$property}: color-rule($hex, '#{$className}');
+    }
+  }
+}
+
+@mixin color-hover($property) {
+  $className: &;
+
+  @each $colorName, $hex in $colors {
+    #{if(&, '&-#{$colorName}-hover:hover', '.#{$colorName}-hover:hover')} {
+      #{$property}: color-rule($hex, '#{$className}');
+    }
+  }
+}
+
+@mixin color-with-hover($color, $hoverColor) {
+  color: color($color);
+  @include transition(color);
+
+  &:hover {
+    color: color($hoverColor);
+  }
+}
+
+@mixin bg-color-with-hover($color, $hoverColor) {
+  background-color: color($color);
+  @include transition(background-color);
+
+  &:hover {
+    background-color: color($hoverColor);
+  }
+}
+
+@mixin border-color-with-hover($color, $hoverColor) {
+  @include border(color($color));
+  @include transition(border-color);
+
+  &:hover {
+    border-color: color($hoverColor);
+  }
+}
